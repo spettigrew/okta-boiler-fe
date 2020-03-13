@@ -10,7 +10,6 @@ const RegisterForm = (props) => {
         firstName: '',
         lastName: ''
     })
-    console.log(props.history)
 
     const handleChange = (event) => {
         setData({
