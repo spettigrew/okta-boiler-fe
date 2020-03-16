@@ -13,9 +13,12 @@ const LoginForm = ({ baseUrl }) => {
         e.preventDefault();
         const oktaAuth = new OktaAuth({ url: baseUrl });
         oktaAuth.signIn({ username, password })
-            .then(res => setSessionToken(res.sessionToken))
+            .then(res => {
+                setSessionToken(res.sessionToken)
+                console.log(res, "okta-auth")
+            })
             .catch(err => console.log('Found an error', err));
-    };
+        };
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
