@@ -13,14 +13,14 @@ const AppWithRouterAccess = () => {
     };
 
     return (
-        <Security issuer='/oauth2/default'
-            clientId=''
+        <Security issuer='https://dev-931472.okta.com/oauth2/default'
+            clientId='0oa40e7wkRL9M188y4x6'
             redirectUri={window.location.origin + '/implicit/callback'}
             onAuthRequired={onAuthRequired}
             pkce={true} >
             <Route path='/' exact={true} component={Home} />
             <SecureRoute path='/protected' component={Protected} />
-            <Route path='/login' render={() => <Login baseUrl='' />} />
+            <Route path='/login' render={() => <Login baseUrl='https://dev-931472.okta.com' />} />
             <Route path='/register' component={RegisterForm} />
             <Route path='/implicit/callback' component={LoginCallback} />
         </Security>
