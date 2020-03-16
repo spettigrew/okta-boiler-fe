@@ -18,7 +18,7 @@ function Protected() {
                 setUserEmail(res.data.email)
                 setUserFirstName(res.data.firstName)
                 setUserLastName(res.data.lastName)
-                console.log(res)
+                console.log(res, "email")
             })
             .catch(err => {
                 console.log("Error alert", err)
